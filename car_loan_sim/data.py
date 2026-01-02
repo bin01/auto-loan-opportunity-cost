@@ -1,5 +1,7 @@
 """Data loading utilities for S&P 500 historical data."""
 
+from __future__ import annotations
+
 import sqlite3
 from pathlib import Path
 
