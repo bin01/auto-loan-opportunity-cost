@@ -49,31 +49,6 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
 ```
 
-## Providing S&P 500 Data
-
-The simulator requires a SQLite database with S&P 500 daily closing prices.
-
-**Expected schema:**
-```sql
-CREATE TABLE sp500_daily_close (
-    id INTEGER PRIMARY KEY,
-    date TEXT UNIQUE NOT NULL,
-    close REAL NOT NULL,
-    created_at TEXT
-);
-```
-
-**Place the database file at the project root:**
-```
-auto-loan-opportunity-cost/
-├── sp500_daily_close.db   <-- Your data file here
-├── car_loan_sim/
-├── notebooks/
-└── ...
-```
-
-> **Note:** The database file is excluded from git via `.gitignore`. You must provide your own data.
-
 ## Running the Notebook
 
 ```bash
